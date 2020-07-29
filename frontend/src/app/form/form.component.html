@@ -1,0 +1,30 @@
+
+<div id="step_1" *ngIf="step_no == 1">
+<label for="email">What is your e-mail:</label>
+<input type="text" id="email" name="email" [(ngModel)]="details.email" ><br><br>
+<input type="button" value="Next" (click)="step(1)">
+<div id="step_1_error" style="display: none;"> Enter Valid Email</div>
+</div>
+
+<div id="step_2" *ngIf="step_no == 2">
+<label for="name">What is your name:</label>
+<input type="text" id="name" name="name" [(ngModel)]="details.name"><br><br>
+<input type="button" value="Next" (click)="step(2)">
+
+</div>
+
+<div id="step_3" *ngIf="step_no == 3">
+<label for="name">What is your mobile:</label>
+<input type="text" id="mobile" name="mobile" [(ngModel)]="details.mobile"><br><br>
+<input type="button" value="Next" (click)="step(3)">
+<div id="step_3_error" style="display: none;"> Enter Valid RSA Mobile e.g 0760934377,+27760934377</div>
+</div>
+
+<div id="step_4" *ngIf="step_no == 4">
+Here are your details :
+<p>Details</p>
+<p> name : {{details.name}}</p>
+<p> e-mail : {{details.email}}</p>
+<p> mobile : {{details.mobile}}</p>
+<input type="button" value="Finsih" (click)="step(4)">
+</div>
